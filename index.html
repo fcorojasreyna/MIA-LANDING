@@ -3,98 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ACADEMIA MIA | MUJER ES EVOLUCION</title>
-  
-  <link rel="icon" type="image/png" href="logo.png">
-  
+  <title>ACADEMIA MIA | Mujer Inmobiliaria en Acción — Formación y Certificación en Bienes Raíces</title>
+  <meta name="description" content="Programa MÍA de la Academia Mujer es Evolución: 12 módulos + 12 Masterclasses + acompañamiento + comunidad + ruta de certificación SEP-CONOCER (EC0110.02). 100% online en vivo. Primera Generación · Inicio 15 de septiembre." />
+  <meta name="theme-color" content="#372061" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ACADEMIA MIA | Mujer Inmobiliaria en Acción" />
+  <meta property="og:description" content="Convierte tu experiencia, tus relaciones y tus habilidades en el inicio de una nueva carrera profesional en bienes raíces." />
+  <meta property="og:image" content="mia-para-ti.jpg" />
+
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              purple: '#372061',
+              purple2: '#4B2A68',
+              ink: '#321A4B',
+              pink: '#c93b82',
+              pinkdark: '#b12f70',
+              pinksoft: '#fbeaf2',
+              pinksoft2: '#f8eaf1',
+              lav: '#ede1f4',
+              gold: '#d99436',
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-  <style>
-    body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-    
-    /* Estilos para que el input de banderas encaje con Tailwind */
+  <style type="text/tailwindcss">
+    @layer base {
+      html, body { overflow-x: hidden; max-width: 100%; }
+      body { font-family: 'Montserrat', sans-serif; }
+      h1, h2, h3, h4 { letter-spacing: -0.01em; }
+      section[id] { scroll-margin-top: 96px; }
+    }
+    @layer components {
+      .container-mia { @apply max-w-7xl mx-auto px-6; }
+      .eyebrow { @apply inline-flex items-center gap-2 text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-brand-pink; }
+      .section-title { @apply text-2xl md:text-4xl font-black text-brand-purple leading-tight; }
+      .lead { @apply text-base md:text-lg text-slate-600 leading-relaxed; }
+
+      .cta-primary { @apply inline-flex items-center justify-center gap-2 bg-brand-pink hover:bg-brand-pinkdark text-white font-extrabold px-8 py-4 rounded-full shadow-[0_12px_30px_-8px_rgba(201,59,130,0.55)] transition-all duration-300 hover:-translate-y-0.5; }
+      .cta-secondary { @apply inline-flex items-center justify-center gap-2 border-2 border-brand-purple text-brand-purple hover:bg-brand-purple hover:text-white font-bold px-8 py-4 rounded-full transition-all duration-300; }
+
+      .card { @apply bg-white rounded-2xl border border-slate-100 shadow-[0_10px_40px_-15px_rgba(55,32,97,0.15)]; }
+      .pill { @apply inline-block bg-brand-purple text-white text-xs md:text-sm font-bold tracking-[0.15em] uppercase px-5 py-2 rounded-full; }
+      .icon-badge { @apply w-14 h-14 rounded-2xl bg-brand-lav text-brand-purple flex items-center justify-center shrink-0; }
+    }
+    /* intl-tel-input encaje con Tailwind */
     .iti { width: 100%; display: block; }
-    .iti__flag-container { padding-left: 0.5rem; z-index: 10; }
+    .iti__flag-container { padding-left: 0.5rem; z-index: 20; }
     #telefono { padding-left: 4.5rem !important; }
-    
-    .glass-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+
+    .glass-card { background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.5); }
+
+    /* Ruta de Éxito: conector de onda */
+    .ruta-wave { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+    @media (max-width: 1023px) { .ruta-wave { display: none; } }
+
+    details.acc > summary { list-style: none; cursor: pointer; }
+    details.acc > summary::-webkit-details-marker { display: none; }
+    details.acc[open] .acc-chevron { transform: rotate(180deg); }
+    .acc-chevron { transition: transform .25s ease; }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    /* Reveal al hacer scroll — el contenido es visible por defecto;
+       solo se oculta/anima cuando el JS confirma que puede revelarlo. */
+    .js-reveal [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .js-reveal [data-reveal].in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .js-reveal [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-[#c93b82] selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-pink selection:text-white">
 
-  <a href="https://wa.me/524423233949?text=Hola,%20quiero%20más%20información%20sobre%20el%20Programa%20Mía" 
-     target="_blank" 
-     class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] transition-all duration-300 transform hover:-translate-y-2 hover:scale-110 z-50 flex items-center justify-center">
-    <i data-lucide="message-circle" class="w-8 h-8"></i>
+  <!-- ================= NAV STICKY ================= -->
+  <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="container-mia h-16 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3 shrink-0">
+        <img src="logo.png" alt="Academia Mujer es Evolución" class="w-9 h-9 object-contain" />
+        <span class="hidden sm:block leading-none">
+          <span class="block text-[10px] font-bold tracking-[0.2em] text-brand-gold uppercase">Academia</span>
+          <span class="block text-sm font-black text-brand-purple">MUJER ES EVOLUCIÓN · MÍA</span>
+        </span>
+      </a>
+      <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+        <a href="#programa" class="hover:text-brand-pink transition-colors">Programa</a>
+        <a href="#modulos" class="hover:text-brand-pink transition-colors">Módulos</a>
+        <a href="#certificacion" class="hover:text-brand-pink transition-colors">Certificación</a>
+        <a href="#comunidad" class="hover:text-brand-pink transition-colors">Comunidad</a>
+        <a href="#faq" class="hover:text-brand-pink transition-colors">FAQ</a>
+      </div>
+      <a href="#inscripcion" class="cta-primary !px-5 !py-2.5 text-xs md:text-sm">
+        <i data-lucide="sparkles" class="w-4 h-4"></i><span class="hidden xs:inline">Quiero formar parte de MIA</span><span class="xs:hidden">Inscríbete</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/524423233949?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Programa%20M%C3%ADa"
+     target="_blank" rel="noopener"
+     aria-label="Escríbenos por WhatsApp"
+     class="fixed bottom-24 md:bottom-6 right-5 md:right-6 bg-[#25D366] text-white p-4 rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.45)] hover:bg-[#20bd5a] transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 z-50 flex items-center justify-center">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
   </a>
 
-  <header class="relative bg-white overflow-hidden border-b-8 border-[#372061]">
-    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#fbeaf2] rounded-l-full opacity-40 -z-10 transform translate-x-1/3"></div>
-    
-    <div class="max-w-7xl mx-auto px-6 pt-16 md:pt-24 grid md:grid-cols-2 gap-12 items-end">
-      
-      <div class="pb-16 flex flex-col items-start" data-aos="fade-right" data-aos-duration="1000">
-        
-        <img src="logo.png" alt="Logo Academia" class="w-20 h-20 md:w-24 md:h-24 object-contain shadow-sm rounded-2xl border border-slate-100 p-2 bg-white mb-6">
-        
-        <h1 class="text-3xl md:text-5xl font-black text-[#372061] leading-tight uppercase mb-2">
-          ACADEMIA MUJER <br>ES EVOLUCIÓN<br>
-          <span class="text-[#c93b82]">PROGRAMA MÍA</span>
+  <!-- Barra CTA fija sólo móvil -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur border-t border-slate-200 px-4 py-3 flex items-center gap-3">
+    <div class="leading-none">
+      <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Precio Fundadora</p>
+      <p class="text-lg font-black text-brand-pink">$5,950 <span class="text-xs text-slate-400 line-through font-semibold">$9,000</span></p>
+    </div>
+    <a href="#inscripcion" class="cta-primary flex-1 !py-3 text-sm">Quiero formar parte</a>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <header id="top" class="relative bg-white overflow-hidden border-b-8 border-brand-purple">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-pinksoft rounded-l-full opacity-40 -z-10 transform translate-x-1/3"></div>
+
+    <div class="container-mia pt-12 md:pt-16 pb-10 md:pb-0 grid md:grid-cols-2 gap-10 lg:gap-12 items-end">
+      <div class="md:pb-16 flex flex-col items-start" data-reveal>
+        <img src="logo.png" alt="Logo Academia Mujer es Evolución" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-2xl border border-slate-100 p-2 bg-white mb-5 shadow-sm" />
+
+        <span class="eyebrow mb-3">Academia Mujer es Evolución · Programa MÍA</span>
+        <p class="text-lg md:text-xl font-semibold text-slate-500 mb-2">Tal vez no necesitas volver a empezar.</p>
+        <h1 class="text-3xl md:text-[2.75rem] font-black text-brand-purple leading-[1.12] mb-4">
+          Necesitas descubrir <span class="text-brand-pink">todo lo que todavía puedes construir.</span>
         </h1>
-        
-        <p class="text-lg md:text-xl font-bold tracking-[0.15em] text-slate-500 uppercase mb-8 border-l-4 border-[#d99436] pl-4">
-          MUJER INMOBILIARIA EN ACCIÓN
+        <p class="lead mb-6 max-w-xl">
+          Convierte tu experiencia, tus relaciones y tus habilidades en el inicio de una nueva carrera profesional en bienes raíces.
         </p>
-        
-        <div class="bg-[#c93b82] text-white text-xs md:text-sm font-bold tracking-widest py-2 px-4 rounded-r-full inline-block mb-8 shadow-md">
-          FORMACIÓN Y CERTIFICACIÓN EN BIENES RAÍCES
+
+        <p class="text-sm md:text-base font-bold tracking-[0.12em] text-slate-500 uppercase mb-6 border-l-4 border-brand-gold pl-4">
+          MÍA — Mujer Inmobiliaria en Acción
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-8 text-xs font-semibold">
+          <span class="bg-brand-lav text-brand-purple px-3 py-1.5 rounded-full">12 módulos de formación</span>
+          <span class="bg-brand-lav text-brand-purple px-3 py-1.5 rounded-full">12 Masterclasses</span>
+          <span class="bg-brand-lav text-brand-purple px-3 py-1.5 rounded-full">Acompañamiento</span>
+          <span class="bg-brand-lav text-brand-purple px-3 py-1.5 rounded-full">Comunidad</span>
+          <span class="bg-brand-lav text-brand-purple px-3 py-1.5 rounded-full">Ruta SEP-CONOCER</span>
         </div>
 
-        <div class="flex items-center gap-4 bg-white border border-slate-200 shadow-md rounded-2xl p-4 inline-flex transition-transform hover:-translate-y-1">
-          <div class="bg-[#fbeaf2] p-3 rounded-lg text-[#372061]">
-            <i data-lucide="calendar-days" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Inicio de Programa</p>
-            <p class="text-lg font-black text-[#372061]">15 DE SEPTIEMBRE</p>
-          </div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+          <a href="#inscripcion" class="cta-primary">
+            <i data-lucide="sparkles" class="w-5 h-5"></i> Quiero formar parte de MIA
+          </a>
+          <a href="https://wa.me/524423233949?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20pago%20del%20Programa%20M%C3%ADa" target="_blank" rel="noopener" class="cta-secondary">
+            <i data-lucide="calendar-clock" class="w-5 h-5"></i> Preguntar por planes de pago
+          </a>
         </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+          <span class="flex items-center gap-2 font-semibold text-brand-purple"><i data-lucide="monitor-play" class="w-5 h-5 text-brand-pink"></i> 100% online · En vivo por Zoom</span>
+          <span class="flex items-center gap-2 font-semibold text-brand-purple"><i data-lucide="calendar-days" class="w-5 h-5 text-brand-pink"></i> Primera Generación · Inicio 15 de septiembre</span>
+        </div>
+
+        <p class="mt-4 text-xs text-slate-500">No necesitas experiencia previa en bienes raíces.</p>
       </div>
 
-      <div class="relative flex justify-center items-end h-full" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
-        <div class="absolute bottom-0 w-[85%] h-[80%] bg-gradient-to-t from-white to-[#fbeaf2]/50 rounded-t-[3rem] border border-white shadow-[0_0_40px_rgba(0,0,0,0.05)] -z-10"></div>
-        <img src="chica.png" alt="Asesora Inmobiliaria" class="relative z-10 object-contain w-full max-w-[400px] drop-shadow-[0_20px_30px_rgba(55,32,97,0.4)]">
+      <div class="relative flex justify-center items-end md:self-stretch md:min-h-[420px]" data-reveal>
+        <div class="absolute bottom-0 w-[88%] h-[70%] bg-gradient-to-t from-white to-brand-pinksoft/60 rounded-t-[3rem] border border-white shadow-[0_0_50px_rgba(0,0,0,0.06)] -z-10"></div>
+        <img src="chica.png" alt="Asesora inmobiliaria del Programa MÍA" class="relative z-10 object-contain object-bottom w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px] max-h-[380px] md:max-h-[560px] drop-shadow-[0_20px_35px_rgba(55,32,97,0.35)]" />
+        <div class="absolute z-20 bottom-4 left-2 md:-left-4 bg-white rounded-2xl shadow-xl border border-slate-100 px-4 py-3 max-w-[calc(100%-1rem)]">
+          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Precio Generación Fundadora</p>
+          <p class="text-2xl font-black text-brand-pink leading-none">$5,950 <span class="text-sm font-semibold text-slate-400">MXN</span></p>
+          <p class="text-[11px] text-slate-500 mt-1">Valor de referencia <span class="line-through">$9,000</span> · ~$500 USD</p>
+        </div>
       </div>
-      
     </div>
   </header>
 
-  <section class="bg-[#372061] text-white py-12 relative z-20 shadow-2xl">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8" data-aos="zoom-in" data-aos-duration="800">
+  <!-- ================= BARRA CERTIFICACIÓN ================= -->
+  <section class="bg-brand-purple text-white py-12 relative z-20 shadow-2xl">
+    <div class="container-mia flex flex-col md:flex-row items-center justify-between gap-8" data-reveal>
       <div class="flex items-center gap-6">
-        <i data-lucide="award" class="w-16 h-16 text-white opacity-90"></i>
+        <i data-lucide="award" class="w-14 h-14 md:w-16 md:h-16 text-white/90 shrink-0"></i>
         <div>
-          <h2 class="text-2xl md:text-4xl font-black mb-1">CERTIFÍCATE COMO <span class="text-[#fbeaf2]">ASESORA INMOBILIARIA</span></h2>
-          <p class="text-sm md:text-lg tracking-widest font-light">EN EL ESTÁNDAR DE COMPETENCIA <span class="bg-[#c93b82] px-3 py-1 rounded-md font-bold ml-2">EC0110.02</span></p>
+          <h2 class="text-xl md:text-3xl font-black mb-1">CERTIFÍCATE COMO <span class="text-brand-pinksoft">ASESORA INMOBILIARIA</span></h2>
+          <p class="text-sm md:text-base tracking-wide font-light">En el Estándar de Competencia <span class="bg-brand-pink px-3 py-1 rounded-md font-bold ml-1">EC0110.02</span></p>
         </div>
       </div>
-      
       <div class="text-right border-l-2 border-white/20 pl-8 hidden md:block">
         <div class="flex items-center gap-2 justify-end mb-2">
           <div class="w-5 h-5 bg-red-600 rounded-sm"></div>
-          <span class="text-3xl font-black tracking-tighter leading-none">red conocer</span>
+          <span class="text-2xl font-black tracking-tight leading-none">red conocer</span>
         </div>
         <p class="text-sm text-white/90 font-medium">Entidad de Certificación y Evaluación</p>
         <p class="text-xs text-white/70">Acreditada por CONOCER</p>
@@ -102,235 +219,759 @@
     </div>
   </section>
 
-  <section class="py-16 px-6 max-w-7xl mx-auto border-b border-slate-200 overflow-hidden">
-    <div class="grid lg:grid-cols-12 gap-8 items-start">
-      
-      <div class="lg:col-span-8" data-aos="fade-right" data-aos-duration="800">
-        <div class="bg-[#372061] text-white inline-block px-6 py-2 rounded-full font-bold tracking-widest mb-8">
-          PROGRAMA DE 12 MÓDULOS
+  <!-- ================= CUADRÍCULA DE BENEFICIOS ================= -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="container-mia">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <span class="eyebrow mb-3">Por qué MÍA</span>
+        <h2 class="section-title">Una nueva etapa también puede convertirse en una nueva oportunidad</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div class="card p-6 text-center hover:-translate-y-1 transition-transform" data-reveal>
+          <div class="icon-badge mx-auto mb-4"><i data-lucide="laptop" class="w-7 h-7"></i></div>
+          <h3 class="font-black text-brand-purple text-sm md:text-base mb-1">Trabaja desde donde quieras</h3>
+          <p class="text-xs md:text-sm text-slate-500">Tú eliges tu lugar y tu forma de organizarte.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">1</div><p class="text-sm font-semibold text-slate-700">Inicia tu carrera como Asesora Inmobiliaria</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">2</div><p class="text-sm font-semibold text-slate-700">Captación Estratégica de Inmuebles</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">3</div><p class="text-sm font-semibold text-slate-700">Opinión de Mercado y Valuación Básica</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">4</div><p class="text-sm font-semibold text-slate-700">Prospección, Perfilamiento y Gestión</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">5</div><p class="text-sm font-semibold text-slate-700">Venta Consultiva, Objeciones y Cierre</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">6</div><p class="text-sm font-semibold text-slate-700">Comercialización y Marketing Inmobiliario</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">7</div><p class="text-sm font-semibold text-slate-700">Marca Personal y Redes Sociales</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">8</div><p class="text-sm font-semibold text-slate-700">Aspectos Legales en la Comercialización</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">9</div><p class="text-sm font-semibold text-slate-700">Proceso Notarial y Compraventa</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">10</div><p class="text-sm font-semibold text-slate-700">Hipotecas: INFONAVIT y FOVISSSTE</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">11</div><p class="text-sm font-semibold text-slate-700">Fiscal, PLD y Cumplimiento Inmobiliario</p></div>
-          <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-100 hover:border-[#c93b82] hover:shadow-md transition-all"><div class="w-10 h-10 bg-[#fbeaf2] text-[#372061] font-black rounded-lg flex items-center justify-center shrink-0">12</div><p class="text-sm font-semibold text-slate-700">Operación y Plan de Negocio Inmobiliario</p></div>
+        <div class="card p-6 text-center hover:-translate-y-1 transition-transform" data-reveal>
+          <div class="icon-badge mx-auto mb-4"><i data-lucide="clock" class="w-7 h-7"></i></div>
+          <h3 class="font-black text-brand-purple text-sm md:text-base mb-1">Maneja tus tiempos</h3>
+          <p class="text-xs md:text-sm text-slate-500">Más autonomía sobre tu día que en un empleo tradicional.</p>
+        </div>
+        <div class="card p-6 text-center hover:-translate-y-1 transition-transform" data-reveal>
+          <div class="icon-badge mx-auto mb-4"><i data-lucide="trending-up" class="w-7 h-7"></i></div>
+          <h3 class="font-black text-brand-purple text-sm md:text-base mb-1">Genera ingresos</h3>
+          <p class="text-xs md:text-sm text-slate-500">Desarrolla una fuente adicional y diversifica tu economía.</p>
+        </div>
+        <div class="card p-6 text-center hover:-translate-y-1 transition-transform" data-reveal>
+          <div class="icon-badge mx-auto mb-4"><i data-lucide="users" class="w-7 h-7"></i></div>
+          <h3 class="font-black text-brand-purple text-sm md:text-base mb-1">Comunidad de mujeres</h3>
+          <p class="text-xs md:text-sm text-slate-500">Rodéate de mujeres que también están creciendo.</p>
+        </div>
+        <div class="card p-6 text-center hover:-translate-y-1 transition-transform" data-reveal>
+          <div class="icon-badge mx-auto mb-4"><i data-lucide="graduation-cap" class="w-7 h-7"></i></div>
+          <h3 class="font-black text-brand-purple text-sm md:text-base mb-1">Aprende de especialistas</h3>
+          <p class="text-xs md:text-sm text-slate-500">Conocimiento real, aplicado al mundo inmobiliario.</p>
+        </div>
+        <div class="card p-6 text-center hover:-translate-y-1 transition-transform" data-reveal>
+          <div class="icon-badge mx-auto mb-4"><i data-lucide="sprout" class="w-7 h-7"></i></div>
+          <h3 class="font-black text-brand-purple text-sm md:text-base mb-1">Crece personal y profesionalmente</h3>
+          <p class="text-xs md:text-sm text-slate-500">Descubre de lo que realmente eres capaz.</p>
         </div>
       </div>
-      
-      <div class="lg:col-span-4 space-y-6 pt-[68px]" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-        <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-[#372061] flex gap-4 items-center transform hover:scale-105 transition-transform cursor-default">
-          <div class="w-12 h-12 rounded-full bg-[#fbeaf2] text-[#372061] flex items-center justify-center shrink-0"><i data-lucide="clock" class="w-6 h-6"></i></div>
-          <div>
-            <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Duración</p>
-            <p class="text-lg font-black text-[#372061]">12 SEMANAS</p>
-            <p class="text-xs font-semibold text-slate-500">24 HORAS de formación</p>
-          </div>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-md border-l-4 border-[#c93b82] flex gap-4 items-center transform hover:scale-105 transition-transform cursor-default">
-          <div class="w-12 h-12 rounded-full bg-[#fbeaf2] text-[#c93b82] flex items-center justify-center shrink-0"><i data-lucide="monitor" class="w-6 h-6"></i></div>
-          <div>
-            <p class="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Modalidad</p>
-            <p class="text-lg font-black text-[#c93b82]">ONLINE EN VIVO</p>
-            <p class="text-xs font-semibold text-slate-500">Clases por Zoom</p>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </section>
 
-  <section class="py-20 px-6 max-w-7xl mx-auto overflow-hidden">
-    <div class="grid lg:grid-cols-2 gap-16">
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <h3 class="text-2xl font-black text-[#372061] mb-10 tracking-widest">INCLUYE:</h3>
-        <div class="space-y-8">
-          <div class="flex gap-6 group hover:-translate-y-1 transition-transform duration-300">
-            <div class="w-16 h-16 rounded-full bg-[#fbeaf2] text-[#c93b82] flex items-center justify-center shrink-0 group-hover:bg-[#c93b82] group-hover:text-white transition-colors duration-300 shadow-sm"><i data-lucide="users" class="w-8 h-8"></i></div>
-            <div>
-              <h4 class="text-lg font-bold text-[#372061] mb-2">ALINEACIÓN Y MASTERCLASSES</h4>
-              <p class="text-slate-600 leading-relaxed text-sm">Conoce el estándar EC0110.02, criterios de desempeño y asiste a sesiones con especialistas invitados del sector.</p>
-            </div>
+  <!-- ================= SECCIÓN 2 · DOLORES ================= -->
+  <section class="py-16 md:py-24 bg-brand-pinksoft2">
+    <div class="container-mia grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div data-reveal>
+        <span class="eyebrow mb-3">¿Te encuentras en este momento de tu vida?</span>
+        <h2 class="section-title mb-6">Has hecho mucho por los demás. Quizá llegó el momento de construir algo también para ti.</h2>
+        <div class="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+          <p>Hay etapas en las que una mujer mira su vida y se pregunta: <em>“¿Y ahora qué sigue para mí?”</em></p>
+          <p>Tal vez durante años tu prioridad fueron tus hijos, tu familia y tu hogar, y tu desarrollo profesional quedó en pausa.</p>
+          <p>Tal vez atraviesas una separación, un cambio familiar o simplemente una etapa distinta que te hace replantearte tu futuro.</p>
+          <p>Quizá quieres volver a trabajar, pero regresar a una oficina y un horario fijo ya no encaja con la vida que quieres tener.</p>
+          <p>O quizá ya trabajas, pero sabes que necesitas diversificar tus ingresos y dejar de depender de una sola fuente.</p>
+          <p>Puede que tengas experiencia, contactos y habilidades, pero no sabes cómo convertirlas en una oportunidad profesional propia.</p>
+          <p class="font-semibold text-brand-purple">Y también ese miedo que pocas veces decimos en voz alta: <em>“¿Será demasiado tarde para empezar algo nuevo?”</em></p>
+        </div>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="#inscripcion" class="cta-primary"><i data-lucide="sparkles" class="w-5 h-5"></i> Quiero formar parte de MIA</a>
+          <a href="https://wa.me/524423233949?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20pago%20del%20Programa%20M%C3%ADa" target="_blank" rel="noopener" class="cta-secondary">Preguntar por planes de pago</a>
+        </div>
+      </div>
+      <div data-reveal class="relative">
+        <img src="reflexion.jpg" alt="Mujer reflexionando junto a la ventana" loading="lazy" class="rounded-3xl w-full object-cover aspect-[4/3] shadow-xl border border-white" />
+        <div class="absolute -bottom-5 left-5 right-5 bg-brand-purple text-white rounded-2xl px-6 py-4 shadow-lg">
+          <p class="font-bold text-sm md:text-base">En MÍA queremos mostrarte que una nueva etapa también puede ser una nueva oportunidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 3 · ¿POR QUÉ BIENES RAÍCES? ================= -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-mia grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div data-reveal class="order-2 lg:order-1">
+        <img src="porque-bienes-raices.jpg" alt="Mujer profesional tomando notas en su escritorio" loading="lazy" class="rounded-3xl w-full object-cover aspect-[4/3] shadow-xl border border-white" />
+      </div>
+      <div data-reveal class="order-1 lg:order-2">
+        <span class="eyebrow mb-3">¿Por qué bienes raíces?</span>
+        <h2 class="section-title mb-6">No necesitas una oficina ni años de experiencia. Necesitas aprender cómo funciona esta profesión y hacerlo correctamente.</h2>
+        <div class="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+          <p>Una asesora inmobiliaria conecta personas con propiedades y oportunidades. Aprende a prospectar, captar inmuebles, perfilar clientes, comercializar propiedades, negociar, acompañar operaciones y construir una red profesional.</p>
+          <p>Para muchas mujeres, esta actividad representa la posibilidad de construir una carrera con mayor flexibilidad y autonomía que un empleo tradicional.</p>
+          <p class="font-semibold text-brand-purple">Hay una enorme diferencia entre intentar vender propiedades y convertirte en una asesora inmobiliaria preparada. Para eso creamos MÍA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 4 · PROGRAMA ================= -->
+  <section id="programa" class="py-16 md:py-24 bg-brand-purple text-white relative overflow-hidden">
+    <div class="absolute -right-24 -top-24 opacity-10"><i data-lucide="graduation-cap" class="w-80 h-80"></i></div>
+    <div class="container-mia relative grid lg:grid-cols-2 gap-12 items-center">
+      <div data-reveal>
+        <span class="eyebrow !text-brand-pinksoft mb-3">MÍA — Mujer Inmobiliaria en Acción</span>
+        <h2 class="text-2xl md:text-4xl font-black mb-6 leading-tight">Programa de Formación y Desarrollo Profesional en Bienes Raíces</h2>
+        <p class="text-white/85 leading-relaxed mb-6">No queremos darte únicamente clases. Queremos mostrarte el camino. MÍA reúne en un mismo programa formación, práctica, acompañamiento, especialistas del sector, contacto con producto inmobiliario, comunidad y una ruta de profesionalización.</p>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-bold tracking-widest">APRENDE</span>
+          <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-bold tracking-widest">ACCIONA</span>
+          <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-bold tracking-widest">PROFESIONALÍZATE</span>
+          <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-bold tracking-widest">CRECE</span>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-white/10 rounded-2xl p-5 border border-white/15">
+            <i data-lucide="clock" class="w-6 h-6 text-brand-pinksoft mb-2"></i>
+            <p class="text-[10px] font-bold text-white/60 tracking-widest uppercase">Duración</p>
+            <p class="text-lg font-black">12 semanas</p>
+            <p class="text-xs text-white/70">24 horas de formación</p>
           </div>
-          <div class="flex gap-6 group hover:-translate-y-1 transition-transform duration-300">
-            <div class="w-16 h-16 rounded-full bg-[#fbeaf2] text-[#c93b82] flex items-center justify-center shrink-0 group-hover:bg-[#c93b82] group-hover:text-white transition-colors duration-300 shadow-sm"><i data-lucide="book-open" class="w-8 h-8"></i></div>
-            <div>
-              <h4 class="text-lg font-bold text-[#372061] mb-2">TALLER PRÁCTICO E INMUEBLES</h4>
-              <p class="text-slate-600 leading-relaxed text-sm">Fortalece tus habilidades con ejercicios reales y presentación de desarrollos disponibles para comercializar.</p>
-            </div>
+          <div class="bg-white/10 rounded-2xl p-5 border border-white/15">
+            <i data-lucide="monitor" class="w-6 h-6 text-brand-pinksoft mb-2"></i>
+            <p class="text-[10px] font-bold text-white/60 tracking-widest uppercase">Modalidad</p>
+            <p class="text-lg font-black">Online en vivo</p>
+            <p class="text-xs text-white/70">Clases por Zoom</p>
           </div>
-          <div class="flex gap-6 group hover:-translate-y-1 transition-transform duration-300">
-            <div class="w-16 h-16 rounded-full bg-[#fbeaf2] text-[#c93b82] flex items-center justify-center shrink-0 group-hover:bg-[#c93b82] group-hover:text-white transition-colors duration-300 shadow-sm"><i data-lucide="handshake" class="w-8 h-8"></i></div>
-            <div>
-              <h4 class="text-lg font-bold text-[#372061] mb-2">ACOMPAÑAMIENTO PERSONALIZADO</h4>
-              <p class="text-slate-600 leading-relaxed text-sm">Te guiamos paso a paso durante todo el proceso de las 12 semanas de programa hasta tu evaluación.</p>
-            </div>
+        </div>
+      </div>
+      <div data-reveal>
+        <img src="programa-valor.jpg" alt="Facilitadora presentando una sesión del programa" loading="lazy" class="rounded-3xl w-full object-cover aspect-[4/3] shadow-2xl border border-white/20" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 5 · 12 MÓDULOS (ACORDEÓN) ================= -->
+  <section id="modulos" class="py-16 md:py-24 bg-white">
+    <div class="container-mia">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <span class="eyebrow mb-3">Programa de 12 módulos</span>
+        <h2 class="section-title">Los 12 módulos MÍA</h2>
+        <p class="lead mt-3">Durante 12 semanas recorrerás paso a paso los conocimientos esenciales para comenzar tu actividad inmobiliaria con claridad, estructura y seguridad.</p>
+      </div>
+
+      <div class="max-w-3xl mx-auto divide-y divide-slate-200 border-y border-slate-200" id="modulos-acc" data-reveal>
+        <!-- items inyectados por JS -->
+      </div>
+
+      <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4" data-reveal>
+        <a href="#inscripcion" class="cta-primary"><i data-lucide="sparkles" class="w-5 h-5"></i> Quiero formar parte de MIA</a>
+        <a href="https://wa.me/524423233949?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20pago%20del%20Programa%20M%C3%ADa" target="_blank" rel="noopener" class="cta-secondary">Preguntar por planes de pago</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INCLUYE ================= -->
+  <section class="py-16 md:py-24 bg-brand-pinksoft2">
+    <div class="container-mia grid lg:grid-cols-2 gap-14">
+      <div data-reveal>
+        <span class="eyebrow mb-6 block">Incluye</span>
+        <div class="space-y-7">
+          <div class="flex gap-5 group">
+            <div class="w-14 h-14 rounded-full bg-white text-brand-pink flex items-center justify-center shrink-0 shadow-sm group-hover:bg-brand-pink group-hover:text-white transition-colors"><i data-lucide="users" class="w-7 h-7"></i></div>
+            <div><h3 class="text-base font-bold text-brand-purple mb-1">Alineación y Masterclasses</h3><p class="text-sm text-slate-600 leading-relaxed">Conoce el estándar EC0110.02, sus criterios de desempeño y asiste a sesiones con especialistas invitados del sector.</p></div>
           </div>
-          <div class="flex gap-6 group hover:-translate-y-1 transition-transform duration-300">
-            <div class="w-16 h-16 rounded-full bg-[#fbeaf2] text-[#c93b82] flex items-center justify-center shrink-0 group-hover:bg-[#c93b82] group-hover:text-white transition-colors duration-300 shadow-sm"><i data-lucide="medal" class="w-8 h-8"></i></div>
-            <div>
-              <h4 class="text-lg font-bold text-[#372061] mb-2">CERTIFICADO SEP-CONOCER</h4>
-              <p class="text-slate-600 leading-relaxed text-sm">Obtén tu Certificado con validez nacional, reconocido en todo México.</p>
-            </div>
+          <div class="flex gap-5 group">
+            <div class="w-14 h-14 rounded-full bg-white text-brand-pink flex items-center justify-center shrink-0 shadow-sm group-hover:bg-brand-pink group-hover:text-white transition-colors"><i data-lucide="book-open" class="w-7 h-7"></i></div>
+            <div><h3 class="text-base font-bold text-brand-purple mb-1">Taller práctico e inmuebles</h3><p class="text-sm text-slate-600 leading-relaxed">Fortalece tus habilidades con ejercicios reales y presentación de desarrollos disponibles para comercializar.</p></div>
+          </div>
+          <div class="flex gap-5 group">
+            <div class="w-14 h-14 rounded-full bg-white text-brand-pink flex items-center justify-center shrink-0 shadow-sm group-hover:bg-brand-pink group-hover:text-white transition-colors"><i data-lucide="handshake" class="w-7 h-7"></i></div>
+            <div><h3 class="text-base font-bold text-brand-purple mb-1">Acompañamiento personalizado</h3><p class="text-sm text-slate-600 leading-relaxed">Te guiamos paso a paso durante las 12 semanas del programa hasta tu proceso de evaluación.</p></div>
+          </div>
+          <div class="flex gap-5 group">
+            <div class="w-14 h-14 rounded-full bg-white text-brand-pink flex items-center justify-center shrink-0 shadow-sm group-hover:bg-brand-pink group-hover:text-white transition-colors"><i data-lucide="medal" class="w-7 h-7"></i></div>
+            <div><h3 class="text-base font-bold text-brand-purple mb-1">Ruta de certificación SEP-CONOCER</h3><p class="text-sm text-slate-600 leading-relaxed">Diagnóstico, alineación y proceso de evaluación para la certificación con validez nacional en México.</p></div>
           </div>
         </div>
       </div>
 
-      <div data-aos="flip-left" data-aos-duration="1200" class="bg-[#fbeaf2] rounded-3xl p-10 shadow-xl border border-white relative overflow-hidden hover:shadow-2xl transition-shadow duration-500">
-        <div class="absolute top-0 right-0 opacity-10 transform translate-x-8 -translate-y-8"><i data-lucide="award" class="w-64 h-64 text-[#c93b82]"></i></div>
+      <div data-reveal class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-slate-100 relative overflow-hidden">
+        <div class="absolute top-0 right-0 opacity-[0.06] translate-x-8 -translate-y-8"><i data-lucide="award" class="w-64 h-64 text-brand-pink"></i></div>
         <div class="relative z-10">
           <div class="flex items-center gap-4 mb-6">
-            <div class="bg-[#c93b82] p-4 rounded-2xl text-white shadow-lg"><i data-lucide="file-check-2" class="w-10 h-10"></i></div>
-            <div><h3 class="text-xl font-black text-[#372061] leading-tight">CERTIFICACIÓN OFICIAL<br>SEP-CONOCER</h3></div>
+            <div class="bg-brand-pink p-4 rounded-2xl text-white shadow-lg"><i data-lucide="file-check-2" class="w-9 h-9"></i></div>
+            <h3 class="text-lg font-black text-brand-purple leading-tight">Certificación oficial<br>SEP-CONOCER</h3>
           </div>
-          <p class="text-xs font-bold tracking-widest text-[#372061] mb-1">EN EL ESTÁNDAR DE COMPETENCIA</p>
-          <h4 class="text-4xl font-black text-[#c93b82] mb-1">EC0110.02</h4>
-          <p class="text-sm font-bold text-[#372061] mb-8">ASESORÍA EN COMERCIALIZACIÓN<br>DE BIENES INMUEBLES</p>
-          <hr class="border-[#c93b82]/30 mb-8">
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-[#c93b82] shrink-0"></i><span class="text-sm font-medium text-slate-700">Reconocimiento nacional de tus competencias.</span></li>
-            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-[#c93b82] shrink-0"></i><span class="text-sm font-medium text-slate-700">Mayor confianza y credibilidad profesional.</span></li>
-            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-[#c93b82] shrink-0"></i><span class="text-sm font-medium text-slate-700">Mejores oportunidades laborales y de negocio.</span></li>
-            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-[#c93b82] shrink-0"></i><span class="text-sm font-medium text-slate-700">Impulsa tu crecimiento y desarrollo profesional.</span></li>
+          <p class="text-xs font-bold tracking-widest text-brand-purple mb-1">En el Estándar de Competencia</p>
+          <h4 class="text-4xl font-black text-brand-pink mb-1">EC0110.02</h4>
+          <p class="text-sm font-bold text-brand-purple mb-6">Asesoría en comercialización de bienes inmuebles</p>
+          <hr class="border-brand-pink/25 mb-6">
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pink shrink-0 mt-0.5"></i><span class="text-sm text-slate-700">Reconocimiento nacional de tus competencias.</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pink shrink-0 mt-0.5"></i><span class="text-sm text-slate-700">Mayor confianza y credibilidad profesional.</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pink shrink-0 mt-0.5"></i><span class="text-sm text-slate-700">Mejores oportunidades laborales y de negocio.</span></li>
+            <li class="flex items-start gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pink shrink-0 mt-0.5"></i><span class="text-sm text-slate-700">Impulsa tu crecimiento y desarrollo profesional.</span></li>
+          </ul>
+          <p class="mt-6 text-[11px] leading-relaxed text-slate-500 bg-brand-lav/60 rounded-lg p-3">
+            La certificación SEP-CONOCER está incluida en el precio fundador. La obtención del certificado no es automática: está sujeta a cumplir los requisitos aplicables y resultar competente en la evaluación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 6 · ESPECIALISTAS ================= -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-mia">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <span class="eyebrow mb-3">Ecosistema MÍA</span>
+        <h2 class="section-title">No aprenderás de una sola persona</h2>
+        <p class="lead mt-3">Una operación inmobiliaria profesional involucra distintas especialidades. Queremos acercarte a profesionales que te muestren qué sucede realmente en cada parte del proceso.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="line-chart" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Valuador</span></div>
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="scale" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Abogado</span></div>
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="briefcase" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Gestor</span></div>
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="stamp" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Notario</span></div>
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="landmark" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Broker hipotecario</span></div>
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="compass" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Arquitecto</span></div>
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="calculator" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Contador</span></div>
+        <div class="card p-5 flex items-center gap-3"><span class="icon-badge !w-11 !h-11"><i data-lucide="megaphone" class="w-5 h-5"></i></span><span class="text-sm font-bold text-brand-purple">Marketing y ventas</span></div>
+      </div>
+      <p class="text-center text-sm text-slate-500 mt-8 max-w-2xl mx-auto">Queremos que aprendas no solamente qué hacer, sino también a quién recurrir cuando una operación requiere conocimiento especializado. También participan asesoras inmobiliarias con experiencia.</p>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 7 · MASTERCLASSES ================= -->
+  <section class="py-16 md:py-20 bg-brand-lav">
+    <div class="container-mia flex flex-col md:flex-row items-center gap-10" data-reveal>
+      <div class="shrink-0 text-center md:text-left">
+        <p class="text-6xl md:text-7xl font-black text-brand-pink leading-none">12</p>
+        <p class="text-lg font-black text-brand-purple tracking-widest uppercase">Masterclasses</p>
+      </div>
+      <div class="border-l-0 md:border-l-2 border-brand-pink/30 md:pl-10">
+        <h2 class="text-xl md:text-2xl font-black text-brand-purple mb-3">Aprende también de quienes ya están recorriendo el camino</h2>
+        <p class="text-slate-600 leading-relaxed text-sm md:text-base">Además de tus 12 módulos principales tendrás acceso a 12 Masterclasses MÍA: encuentros especiales con profesionales, empresarios, asesores, especialistas y actores del ecosistema inmobiliario. Experiencias reales. Casos reales. Aprendizajes reales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 8 · INVENTARIO ================= -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-mia grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div data-reveal>
+        <span class="eyebrow mb-3">Acceso a inventario y oportunidades</span>
+        <h2 class="section-title mb-6">No solo aprenderás. Queremos que tengas qué comercializar.</h2>
+        <div class="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+          <p>Uno de los grandes problemas de una asesora que comienza es preguntarse: <em>“Muy bien… ya aprendí. ¿Ahora qué vendo?”</em></p>
+          <p>Dentro del ecosistema MÍA invitaremos a desarrolladores y aliados comerciales para presentar diferentes alternativas inmobiliarias que las participantes puedan conocer y, cuando las condiciones comerciales y de incorporación lo permitan, comenzar a comercializar.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 mt-6">
+          <span class="bg-brand-pinksoft text-brand-purple px-3 py-1.5 rounded-full text-xs font-semibold">Vivienda</span>
+          <span class="bg-brand-pinksoft text-brand-purple px-3 py-1.5 rounded-full text-xs font-semibold">Desarrollos</span>
+          <span class="bg-brand-pinksoft text-brand-purple px-3 py-1.5 rounded-full text-xs font-semibold">Preventas</span>
+          <span class="bg-brand-pinksoft text-brand-purple px-3 py-1.5 rounded-full text-xs font-semibold">Terrenos</span>
+          <span class="bg-brand-pinksoft text-brand-purple px-3 py-1.5 rounded-full text-xs font-semibold">Inversión</span>
+          <span class="bg-brand-pinksoft text-brand-purple px-3 py-1.5 rounded-full text-xs font-semibold">Residencial</span>
+        </div>
+        <p class="mt-6 text-[11px] leading-relaxed text-slate-500 bg-slate-50 rounded-lg p-3 border border-slate-100">
+          El acceso a inventario y oportunidades está sujeto a las condiciones comerciales y de incorporación de cada producto y aliado.
+        </p>
+      </div>
+      <div data-reveal>
+        <img src="inventario.jpg" alt="Desarrollo inmobiliario al atardecer" loading="lazy" class="rounded-3xl w-full object-cover aspect-[4/3] shadow-xl border border-white" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 9 + 10 · ES / NO ES PARA TI ================= -->
+  <section class="py-16 md:py-24 bg-brand-pinksoft2">
+    <div class="container-mia">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="card p-8 md:p-10" data-reveal>
+          <h2 class="text-xl md:text-2xl font-black text-brand-purple mb-6 flex items-center gap-3"><i data-lucide="heart-handshake" class="w-7 h-7 text-brand-pink"></i> MÍA es para ti si…</h2>
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Quieres iniciar una nueva etapa profesional.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Quieres una profesión que te dé más autonomía sobre tu tiempo.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Buscas una fuente adicional de ingresos y ampliar tus posibilidades.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> No quieres depender toda tu vida de un solo sueldo o actividad.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Te gustan las ventas, las relaciones y el servicio (o quieres desarrollarlas).</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Tienes contactos, pero no sabes cómo convertir tu red en oportunidades.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Quieres aprender desde cero y no sabes por dónde comenzar.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Quieres rodearte de mujeres que también están creciendo.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Quieres seguir presente para lo importante mientras construyes tu futuro.</li>
+            <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Estás dispuesta a aprender, prospectar, practicar, equivocarte, corregir y accionar.</li>
           </ul>
         </div>
+        <div class="rounded-2xl p-8 md:p-10 bg-brand-purple text-white" data-reveal>
+          <h2 class="text-xl md:text-2xl font-black mb-6 flex items-center gap-3"><i data-lucide="alert-triangle" class="w-7 h-7 text-brand-pinksoft"></i> MÍA no es para ti si…</h2>
+          <p class="font-semibold text-brand-pinksoft mb-4">MÍA no es una fórmula de dinero rápido.</p>
+          <ul class="space-y-3 text-sm text-white/85">
+            <li class="flex gap-3"><i data-lucide="x" class="w-5 h-5 text-brand-pinksoft shrink-0"></i> Esperas recibir clientes sin prospectar.</li>
+            <li class="flex gap-3"><i data-lucide="x" class="w-5 h-5 text-brand-pinksoft shrink-0"></i> Piensas que vender bienes raíces es solo publicar propiedades en redes sociales.</li>
+            <li class="flex gap-3"><i data-lucide="x" class="w-5 h-5 text-brand-pinksoft shrink-0"></i> Buscas resultados económicos garantizados sin desarrollar habilidades, relaciones y disciplina comercial.</li>
+          </ul>
+          <p class="mt-8 text-lg font-black">MÍA te muestra el camino. Tú tendrás que recorrerlo.</p>
+          <img src="mia-para-ti.jpg" alt="Mujer profesional segura junto a su comunidad" loading="lazy" class="mt-8 rounded-2xl w-full object-cover aspect-[16/9] border border-white/20" />
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-white py-20 px-6 border-t border-slate-100 relative overflow-hidden">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16" data-aos="fade-down">
-        <h2 class="inline-block text-2xl md:text-3xl font-black text-[#372061] border-b-4 border-[#c93b82] pb-2 tracking-widest">
-          TU PROCESO DE CERTIFICACIÓN EN 3 CLASES
-        </h2>
+  <!-- ================= SECCIÓN 11 · AL TERMINAR ================= -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container-mia grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div data-reveal class="order-2 lg:order-1">
+        <img src="resultados.jpg" alt="Grupo celebrando un logro profesional" loading="lazy" class="rounded-3xl w-full object-cover aspect-[4/3] shadow-xl border border-white" />
       </div>
+      <div data-reveal class="order-1 lg:order-2">
+        <span class="eyebrow mb-3">Al terminar las 12 semanas…</span>
+        <h2 class="section-title mb-6">No queremos que termines preguntándote: “¿Y ahora qué hago?”</h2>
+        <p class="lead mb-6">Queremos que salgas con conocimiento + herramientas + contactos + inventario + comunidad + acompañamiento + una ruta clara de crecimiento.</p>
+        <p class="text-slate-600 leading-relaxed text-sm md:text-base">Y que puedas comenzar a desarrollar tu actividad inmobiliaria de acuerdo con tus objetivos y circunstancias.</p>
+        <p class="mt-6 text-lg font-black text-brand-pink">Tu crecimiento no termina con la última clase. Ahí comienza tu carrera.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 12 · ACTUALIZACIONES DE POR VIDA ================= -->
+  <section class="py-16 md:py-20 bg-brand-lav">
+    <div class="container-mia grid md:grid-cols-2 gap-8 items-center" data-reveal>
+      <div>
+        <span class="eyebrow mb-3">Actualizaciones de por vida</span>
+        <h2 class="section-title">El mercado cambia. Tu formación también debe evolucionar.</h2>
+      </div>
+      <div class="space-y-4">
+        <div class="card p-5 flex gap-4">
+          <span class="icon-badge !w-11 !h-11"><i data-lucide="refresh-cw" class="w-5 h-5"></i></span>
+          <p class="text-sm text-slate-600">Acceso a actualizaciones del contenido cuando existan cambios legales o normativos que impacten directamente la actividad inmobiliaria.</p>
+        </div>
+        <div class="card p-5 flex gap-4">
+          <span class="icon-badge !w-11 !h-11"><i data-lucide="plus-circle" class="w-5 h-5"></i></span>
+          <p class="text-sm text-slate-600">Acceso a los nuevos módulos que se integren posteriormente al programa MÍA, como parte de la evolución académica de la formación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 13 · COMUNIDAD ================= -->
+  <section id="comunidad" class="py-16 md:py-24 bg-white">
+    <div class="container-mia grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div data-reveal>
+        <span class="eyebrow mb-3">Comunidad y ecosistema MÍA</span>
+        <h2 class="section-title mb-6">No queremos formar alumnas. Queremos desarrollar Mujeres Inmobiliarias en Acción.</h2>
+        <ul class="grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Comunidad de alumnas y egresadas MÍA.</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Eventos presenciales y encuentros de networking.</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Desayunos de oportunidad.</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Encuentros y presentaciones con desarrolladores.</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Actualización continua.</li>
+          <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Alianzas y colaboración entre asesoras.</li>
+          <li class="flex gap-3 sm:col-span-2"><i data-lucide="check" class="w-5 h-5 text-brand-pink shrink-0"></i> Contacto permanente con el ecosistema inmobiliario.</li>
+        </ul>
+      </div>
+      <div data-reveal>
+        <img src="comunidad.jpg" alt="Dos mujeres colaborando en un proyecto" loading="lazy" class="rounded-3xl w-full object-cover aspect-[4/3] shadow-xl border border-white" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 14 · RUTA DE CERTIFICACIÓN ================= -->
+  <section id="certificacion" class="py-16 md:py-24 bg-brand-pinksoft2">
+    <div class="container-mia">
+      <div class="text-center max-w-3xl mx-auto mb-14" data-reveal>
+        <span class="eyebrow mb-3">Ruta de profesionalización y certificación SEP-CONOCER</span>
+        <h2 class="section-title">Tu proceso de certificación en 3 pasos</h2>
+        <p class="lead mt-3">La Primera Generación MÍA incluye dentro de su inversión la ruta de evaluación y certificación SEP-CONOCER correspondiente al estándar <strong>EC0110.02 — Asesoría en comercialización de bienes inmuebles</strong>.</p>
+      </div>
+
       <div class="grid md:grid-cols-3 gap-8 relative">
-        <div class="hidden md:block absolute top-1/2 left-[20%] w-[60%] border-t-2 border-dashed border-[#c93b82]/30 -z-10"></div>
-        <div data-aos="zoom-in" data-aos-delay="100" class="glass-card p-8 rounded-3xl text-center shadow-lg hover:-translate-y-2 transition-transform duration-300">
-          <div class="w-14 h-14 bg-[#372061] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg transform -translate-y-12">1</div>
-          <i data-lucide="clipboard-list" class="w-12 h-12 mx-auto text-[#c93b82] mb-4 -mt-8"></i>
-          <h3 class="text-lg font-black text-[#372061] mb-4">DIAGNÓSTICO INICIAL</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Evaluamos tu nivel actual de conocimiento y experiencia para identificar tus fortalezas y áreas de oportunidad.</p>
+        <div class="hidden md:block absolute top-16 left-[16%] w-[68%] border-t-2 border-dashed border-brand-pink/40"></div>
+        <div class="glass-card p-8 rounded-3xl text-center shadow-lg" data-reveal>
+          <div class="w-14 h-14 bg-brand-purple text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-5">1</div>
+          <i data-lucide="clipboard-list" class="w-10 h-10 mx-auto text-brand-pink mb-3"></i>
+          <h3 class="text-base font-black text-brand-purple mb-2">Diagnóstico</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Identificamos tu nivel de conocimientos y las áreas que necesitas fortalecer.</p>
         </div>
-        <div data-aos="zoom-in" data-aos-delay="300" class="glass-card p-8 rounded-3xl text-center shadow-lg hover:-translate-y-2 transition-transform duration-300">
-          <div class="w-14 h-14 bg-[#372061] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg transform -translate-y-12">2</div>
-          <i data-lucide="message-square-dashed" class="w-12 h-12 mx-auto text-[#c93b82] mb-4 -mt-8"></i>
-          <h3 class="text-lg font-black text-[#372061] mb-4">ALINEACIÓN</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Revisión del estándar de competencia, sus elementos y evidencias. Te preparamos y resolvemos dudas.</p>
+        <div class="glass-card p-8 rounded-3xl text-center shadow-lg" data-reveal>
+          <div class="w-14 h-14 bg-brand-purple text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-5">2</div>
+          <i data-lucide="message-square-dashed" class="w-10 h-10 mx-auto text-brand-pink mb-3"></i>
+          <h3 class="text-base font-black text-brand-purple mb-2">Alineación</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Conoces el estándar, sus elementos, criterios y evidencias, y te preparas para el proceso de evaluación.</p>
         </div>
-        <div data-aos="zoom-in" data-aos-delay="500" class="glass-card p-8 rounded-3xl text-center shadow-lg hover:-translate-y-2 transition-transform duration-300">
-          <div class="w-14 h-14 bg-[#372061] text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-6 shadow-lg transform -translate-y-12">3</div>
-          <i data-lucide="award" class="w-12 h-12 mx-auto text-[#c93b82] mb-4 -mt-8"></i>
-          <h3 class="text-lg font-black text-[#372061] mb-4">EVALUACIÓN / EXAMEN</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">Presentas tu evaluación ante la entidad acreditada y, al demostrar tu competencia, obtienes tu Certificado SEP-CONOCER.</p>
+        <div class="glass-card p-8 rounded-3xl text-center shadow-lg" data-reveal>
+          <div class="w-14 h-14 bg-brand-purple text-white rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-5">3</div>
+          <i data-lucide="award" class="w-10 h-10 mx-auto text-brand-pink mb-3"></i>
+          <h3 class="text-base font-black text-brand-purple mb-2">Evaluación / Examen</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">Presentas las evidencias, actividades y evaluación requeridas dentro del proceso correspondiente.</p>
+        </div>
+      </div>
+
+      <p class="max-w-3xl mx-auto text-center text-sm font-semibold text-brand-purple bg-brand-lav rounded-xl p-4 mt-10">
+        IMPORTANTE: la obtención del certificado está sujeta a cumplir los requisitos aplicables y resultar competente en la evaluación.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4" data-reveal>
+        <a href="#inscripcion" class="cta-primary"><i data-lucide="sparkles" class="w-5 h-5"></i> Quiero formar parte de MIA</a>
+        <a href="https://wa.me/524423233949?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20pago%20del%20Programa%20M%C3%ADa" target="_blank" rel="noopener" class="cta-secondary">Preguntar por planes de pago</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 15 · RUTA DE ÉXITO (TIMELINE) ================= -->
+  <section id="ruta" class="py-16 md:py-24 bg-white overflow-hidden">
+    <div class="container-mia">
+      <div class="text-center max-w-2xl mx-auto mb-14" data-reveal>
+        <span class="eyebrow mb-3">Un paso a la vez, hacia la vida que quieres</span>
+        <h2 class="section-title">Tu Ruta de Éxito MÍA</h2>
+        <p class="text-sm font-bold tracking-[0.15em] text-brand-pink mt-3 uppercase">Aprende · Acciona · Profesionalízate · Crece</p>
+      </div>
+
+      <!-- Desktop: horizontal con onda -->
+      <div class="relative hidden lg:block" data-reveal>
+        <svg class="ruta-wave" viewBox="0 0 1200 160" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="wave" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#c93b82"/><stop offset="1" stop-color="#7b5fb0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0,110 C 90,40 190,40 280,90 C 370,140 470,140 560,90 C 650,40 750,40 840,90 C 930,140 1030,140 1120,90 C 1160,68 1180,60 1200,58"
+                stroke="url(#wave)" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 12"/>
+        </svg>
+        <div class="relative grid grid-cols-7 gap-3">
+          <!-- pasos inyectados por JS: #ruta-steps -->
+          <div id="ruta-steps" class="contents"></div>
+        </div>
+      </div>
+
+      <!-- Mobile: vertical -->
+      <div class="lg:hidden relative pl-8" data-reveal>
+        <div class="absolute left-3 top-2 bottom-2 w-0.5 bg-gradient-to-b from-brand-pink to-brand-purple"></div>
+        <div id="ruta-steps-m" class="space-y-6"></div>
+      </div>
+
+      <p class="text-center text-slate-500 text-sm mt-14 max-w-2xl mx-auto italic">Hoy aprendes, mañana construyes la vida que deseas. Más que un programa, es tu nuevo comienzo.</p>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 16 · TODO LO QUE RECIBES ================= -->
+  <section class="py-16 md:py-24 bg-brand-purple text-white">
+    <div class="container-mia">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <span class="eyebrow !text-brand-pinksoft mb-3">Todo lo que recibes</span>
+        <h2 class="text-2xl md:text-4xl font-black">No caminarás sola mientras aprendes a construir tu nueva profesión</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3" data-reveal>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">12 módulos especializados</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">12 Masterclasses</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Clases online y en vivo</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Acompañamiento durante el programa</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Especialistas del sector</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Ejercicios y casos prácticos</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Presentaciones de desarrolladores</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Acceso a oportunidades de inventario*</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Ruta de profesionalización</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Diagnóstico, alineación y evaluación SEP-CONOCER</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Comunidad MÍA</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Actualizaciones de por vida + nuevos módulos</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Invitación a eventos y desayunos de oportunidad</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Networking inmobiliario</span></div>
+        <div class="flex gap-3 bg-white/10 rounded-xl p-4 border border-white/10"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-pinksoft shrink-0"></i><span class="text-sm">Continuar desarrollándote dentro del ecosistema</span></div>
+      </div>
+      <p class="text-xs text-white/60 mt-6">*Sujeto a las condiciones de cada producto y aliado.</p>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 17 · OFERTA ================= -->
+  <section id="oferta" class="py-16 md:py-24 bg-white">
+    <div class="container-mia max-w-4xl">
+      <div class="text-center mb-10" data-reveal>
+        <span class="eyebrow mb-3">Oferta — Primera Generación Fundadora</span>
+        <h2 class="section-title">¿Cuánto vale abrir una nueva posibilidad profesional en tu vida?</h2>
+        <p class="lead mt-3">Queremos que nuestras primeras participantes sean quienes nos ayuden a construir la historia de MÍA.</p>
+      </div>
+
+      <div class="rounded-3xl bg-brand-purple text-white p-8 md:p-12 text-center shadow-2xl" data-reveal>
+        <p class="text-xs font-bold tracking-[0.2em] uppercase text-brand-pinksoft mb-3">Precio especial · Primera Generación Fundadora</p>
+        <div class="flex items-end justify-center gap-3">
+          <span class="text-2xl md:text-3xl font-bold text-white/50 line-through">$9,000</span>
+          <span class="text-5xl md:text-6xl font-black text-white leading-none">$5,950</span>
+          <span class="text-lg font-semibold text-white/70 mb-1">MXN</span>
+        </div>
+        <p class="text-sm text-white/70 mt-2">Valor de referencia del programa: $9,000 MXN / aprox. $500 USD</p>
+        <p class="mt-6 text-white/90 font-semibold">Incluye formación MÍA + ruta de certificación SEP-CONOCER.</p>
+        <p class="text-sm text-white/70">Inicio: 15 de septiembre</p>
+        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#inscripcion" class="cta-primary"><i data-lucide="sparkles" class="w-5 h-5"></i> Quiero ser parte de la Primera Generación MIA</a>
+          <a href="https://wa.me/524423233949?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20pago%20del%20Programa%20M%C3%ADa" target="_blank" rel="noopener" class="cta-secondary !border-white !text-white hover:!bg-white hover:!text-brand-purple">¿Necesitas dividir tu inversión? Planes de pago</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-20 px-6 bg-slate-50" id="inscripcion">
-    <div class="max-w-md mx-auto bg-white rounded-3xl p-10 shadow-[0_20px_50px_rgba(55,32,97,0.1)] border border-slate-100" data-aos="zoom-out-up" data-aos-duration="1000">
+  <!-- ================= INSCRIPCIÓN / FORM ================= -->
+  <section id="inscripcion" class="py-16 md:py-24 bg-brand-pinksoft2">
+    <div id="successBanner" class="hidden max-w-md mx-auto mb-6 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl p-5 text-center">
+      <i data-lucide="check-circle" class="w-8 h-8 mx-auto mb-2"></i>
+      <p class="font-bold">¡Pago recibido! Gracias por unirte a la Primera Generación MÍA.</p>
+      <p class="text-sm mt-1">Te contactaremos por correo y WhatsApp con los siguientes pasos.</p>
+    </div>
+
+    <div class="max-w-md mx-auto card p-8 md:p-10" data-reveal>
       <div class="text-center mb-8">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-[#fbeaf2] text-[#c93b82] rounded-full mb-4 shadow-sm">
-          <i data-lucide="shield-check" class="w-8 h-8"></i>
-        </div>
-        <h3 class="text-2xl font-black text-[#372061]">Inscripción Oficial</h3>
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-brand-pinksoft text-brand-pink rounded-full mb-4"><i data-lucide="shield-check" class="w-8 h-8"></i></div>
+        <h3 class="text-2xl font-black text-brand-purple">Inscripción oficial</h3>
         <p class="text-sm text-slate-500 mt-2">Completa tus datos para acceder a la pasarela de pago seguro.</p>
         <div class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-100">
-          <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Inversión Única</div>
-          <div class="text-4xl font-black text-[#c93b82]">$5,950 <span class="text-lg text-slate-500 font-medium">MXN</span></div>
-          <div class="text-sm font-bold text-[#d99436] mt-2 border-t pt-2 border-slate-200">Primera Generación - Precio Fundador</div>
+          <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Inversión única</div>
+          <div class="text-4xl font-black text-brand-pink">$5,950 <span class="text-lg text-slate-400 font-medium line-through">$9,000</span> <span class="text-base text-slate-500 font-medium">MXN</span></div>
+          <div class="text-sm font-bold text-brand-gold mt-2 border-t pt-2 border-slate-200">Primera Generación · Precio Fundador</div>
         </div>
       </div>
 
-      <form id="formPago" onsubmit="procesarInscripcion(event)" class="space-y-5">
+      <form id="formPago" onsubmit="procesarInscripcion(event)" class="space-y-5" novalidate>
         <div>
-          <label class="block text-xs font-bold text-[#372061] uppercase mb-1.5 ml-1">Nombre Completo *</label>
+          <label for="nombre" class="block text-xs font-bold text-brand-purple uppercase mb-1.5 ml-1">Nombre completo *</label>
           <div class="relative">
-            <i data-lucide="user" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400 z-10"></i>
-            <input type="text" id="nombre" required class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-[#c93b82] focus:ring-2 focus:ring-[#c93b82]/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" placeholder="Ej. María Pérez" />
+            <i data-lucide="user" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 z-10"></i>
+            <input type="text" id="nombre" autocomplete="name" required class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" placeholder="Ej. María Pérez" />
           </div>
         </div>
         <div>
-          <label class="block text-xs font-bold text-[#372061] uppercase mb-1.5 ml-1">Correo Electrónico *</label>
+          <label for="email" class="block text-xs font-bold text-brand-purple uppercase mb-1.5 ml-1">Correo electrónico *</label>
           <div class="relative">
-            <i data-lucide="mail" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400 z-10"></i>
-            <input type="email" id="email" required class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-[#c93b82] focus:ring-2 focus:ring-[#c93b82]/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" placeholder="tu@correo.com" />
+            <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 z-10"></i>
+            <input type="email" id="email" autocomplete="email" required class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" placeholder="tu@correo.com" />
           </div>
         </div>
-        
         <div>
-          <label class="block text-xs font-bold text-[#372061] uppercase mb-1.5 ml-1">Teléfono / WhatsApp *</label>
-          <input type="tel" id="telefono" required class="w-full pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-[#c93b82] focus:ring-2 focus:ring-[#c93b82]/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" />
+          <label for="telefono" class="block text-xs font-bold text-brand-purple uppercase mb-1.5 ml-1">Teléfono / WhatsApp *</label>
+          <input type="tel" id="telefono" autocomplete="tel" required class="w-full pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" />
         </div>
-        
         <div>
-          <label class="block text-xs font-bold text-[#372061] uppercase mb-1.5 ml-1">Ciudad *</label>
+          <label for="ciudad" class="block text-xs font-bold text-brand-purple uppercase mb-1.5 ml-1">Ciudad *</label>
           <div class="relative">
-            <i data-lucide="map-pin" class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400 z-10"></i>
-            <input type="text" id="ciudad" required class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-[#c93b82] focus:ring-2 focus:ring-[#c93b82]/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" placeholder="Ej. Monterrey" />
+            <i data-lucide="map-pin" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 z-10"></i>
+            <input type="text" id="ciudad" autocomplete="address-level2" required class="w-full pl-12 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 focus:outline-none transition-all bg-slate-50 focus:bg-white" placeholder="Ej. Querétaro" />
           </div>
         </div>
 
-        <button type="submit" id="btnPagar" class="w-full bg-[#009ee3] hover:bg-[#0081b8] text-white font-extrabold py-4 rounded-xl flex items-center justify-center gap-3 mt-8 transition-all transform hover:-translate-y-1 shadow-[0_8px_20px_rgba(0,158,227,0.3)]">
-          <i data-lucide="credit-card" class="w-5 h-5"></i>
-          <span>Pagar de forma segura</span>
+        <button type="submit" id="btnPagar" class="w-full bg-[#009ee3] hover:bg-[#0081b8] text-white font-extrabold py-4 rounded-xl flex items-center justify-center gap-3 mt-8 transition-all transform hover:-translate-y-0.5 shadow-[0_8px_20px_rgba(0,158,227,0.3)]">
+          <i data-lucide="credit-card" class="w-5 h-5"></i><span>Pagar de forma segura</span>
         </button>
-        
+
         <p class="text-center text-xs text-slate-400 mt-4 flex items-center justify-center gap-1">
           <i data-lucide="lock" class="w-3 h-3"></i> Transacción cifrada y segura vía Stripe
+        </p>
+        <p class="text-center text-[11px] text-slate-400">
+          ¿Prefieres pagar en partes? <a href="https://wa.me/524423233949?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20pago%20del%20Programa%20M%C3%ADa" target="_blank" rel="noopener" class="text-brand-pink font-semibold underline">Escríbenos por los planes de pago</a>.
         </p>
       </form>
     </div>
   </section>
 
-  <footer class="bg-[#372061] text-white">
-    <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+  <!-- ================= SECCIÓN 18 · FAQ ================= -->
+  <section id="faq" class="py-16 md:py-24 bg-white">
+    <div class="container-mia max-w-3xl">
+      <div class="text-center mb-12" data-reveal>
+        <span class="eyebrow mb-3">Preguntas frecuentes</span>
+        <h2 class="section-title">Resolvemos tus dudas</h2>
+      </div>
+      <div class="divide-y divide-slate-200 border-y border-slate-200" id="faq-acc" data-reveal></div>
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 19 · CIERRE EMOCIONAL ================= -->
+  <section class="relative py-20 md:py-28 bg-brand-purple text-white overflow-hidden">
+    <img src="cierre-emocional.jpg" alt="Mujer mirando con esperanza hacia la ventana" class="absolute inset-0 w-full h-full object-cover opacity-20" loading="lazy" />
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-purple via-brand-purple/95 to-brand-purple/70"></div>
+    <div class="container-mia relative max-w-3xl text-center" data-reveal>
+      <p class="text-lg md:text-xl text-brand-pinksoft font-semibold mb-6">Tus hijos crecieron. Tu vida cambió. Quizá tú también estás lista para crecer de una manera diferente.</p>
+      <div class="space-y-1 text-white/80 mb-8">
+        <p>No tienes que tener todo resuelto.</p>
+        <p>No tienes que conocer el mercado inmobiliario.</p>
+        <p>No tienes que saber vender una propiedad hoy.</p>
+      </div>
+      <p class="text-xl md:text-2xl font-black mb-3">Solo necesitas decidir que quieres aprender algo nuevo y darte la oportunidad de comenzar.</p>
+      <p class="text-white/80 mb-10 max-w-2xl mx-auto">Hay una nueva etapa frente a ti. Y puede traer nuevos conocimientos, nuevas relaciones, nuevas posibilidades de ingreso y una versión profesional de ti que quizá habías dejado pendiente.</p>
+
+      <p class="text-2xl font-black tracking-tight">MÍA — Mujer Inmobiliaria en Acción</p>
+      <p class="text-brand-pinksoft font-semibold mb-2">Transforma tu futuro. Construye tu carrera.</p>
+      <p class="text-sm text-white/70 mb-8">Primera Generación · Inicio 15 de septiembre · Precio Fundadoras $5,950 MXN (incluye ruta de certificación SEP-CONOCER)</p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#inscripcion" class="cta-primary"><i data-lucide="sparkles" class="w-5 h-5"></i> Quiero comenzar mi camino en bienes raíces</a>
+        <a href="https://wa.me/524423233949?text=Hola,%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20pago%20del%20Programa%20M%C3%ADa" target="_blank" rel="noopener" class="cta-secondary !border-white !text-white hover:!bg-white hover:!text-brand-purple">Preguntar por planes de pago</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-ink text-white">
+    <div class="container-mia py-12 grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
       <div class="flex flex-col gap-5">
         <div class="flex items-center gap-4">
-          <img src="logo.png" alt="Logo" class="w-10 h-10 object-contain rounded bg-white p-1">
+          <img src="logo.png" alt="Logo" class="w-11 h-11 object-contain bg-white p-1 rounded" />
           <div>
-            <p class="text-xs font-bold tracking-widest text-[#d99436] mb-1">ACADEMIA</p>
+            <p class="text-xs font-bold tracking-widest text-brand-gold mb-1">ACADEMIA</p>
             <p class="font-black text-lg leading-tight">MUJER ES EVOLUCIÓN</p>
-            <p class="text-[10px] font-light text-white/80 mt-1">Conocimiento que te empodera. Acción que te transforma.</p>
+            <p class="text-[11px] font-light text-white/70 mt-1">Conocimiento que te empodera. Acción que te transforma.</p>
           </div>
         </div>
-        <a href="https://instagram.com/mujer.es.evolucion" target="_blank" class="inline-flex items-center gap-2 text-white bg-[#c93b82] hover:bg-white hover:text-[#c93b82] w-max px-4 py-2 rounded-full transition-colors duration-300 shadow-md">
-          <i data-lucide="instagram" class="w-5 h-5"></i>
-          <span class="text-sm font-bold tracking-wider">@mujer.es.evolucion</span>
+        <a href="https://instagram.com/mujer.es.evolucion" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-brand-pink hover:bg-white hover:text-brand-pink w-max px-4 py-2 rounded-full transition-colors shadow-md">
+          <i data-lucide="instagram" class="w-5 h-5"></i><span class="text-sm font-bold tracking-wide">@mujer.es.evolucion</span>
         </a>
       </div>
-      <div class="flex items-center gap-3 justify-start md:justify-center">
-        <div class="bg-[#c93b82] p-2 rounded-full text-white"><i data-lucide="phone" class="w-5 h-5"></i></div>
-        <div>
-          <p class="text-[10px] font-bold tracking-widest uppercase text-white/70">Más Información</p>
-          <p class="text-xl font-black">442 323 3949</p>
+
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="bg-brand-pink p-2 rounded-full"><i data-lucide="phone" class="w-5 h-5"></i></div>
+          <div>
+            <p class="text-[10px] font-bold tracking-widest uppercase text-white/60">Más información</p>
+            <a href="tel:+524423233949" class="text-lg font-black hover:text-brand-pinksoft transition-colors">442 323 3949</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="bg-brand-pink p-2 rounded-full"><i data-lucide="calendar-days" class="w-5 h-5"></i></div>
+          <div>
+            <p class="text-[10px] font-bold tracking-widest uppercase text-white/60">Inicio de programa</p>
+            <p class="text-lg font-black">15 de septiembre</p>
+          </div>
         </div>
       </div>
-      <div class="bg-[#c93b82] px-6 py-3 rounded-lg text-center justify-self-start md:justify-self-end shadow-md">
-        <p class="text-[10px] font-bold tracking-widest uppercase mb-1">Inicio de Programa</p>
-        <p class="text-lg font-black">15 DE SEPTIEMBRE</p>
+
+      <div class="text-[11px] leading-relaxed text-white/60 space-y-2">
+        <p class="font-bold text-white/80 tracking-widest uppercase text-xs">Avisos importantes</p>
+        <p>La certificación SEP-CONOCER está incluida en el precio fundador; la obtención del certificado está sujeta a cumplir los requisitos aplicables y resultar competente en la evaluación.</p>
+        <p>MÍA no promete ingresos garantizados. Los resultados dependen, entre otros factores, de tu actividad comercial, prospección, mercado, seguimiento y ejecución.</p>
+        <p>El acceso a inventario y oportunidades está sujeto a las condiciones comerciales y de incorporación de cada producto y aliado.</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-mia py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-white/50">
+        <p>© <span id="year"></span> Academia Mujer es Evolución · MÍA — Mujer Inmobiliaria en Acción. Todos los derechos reservados.</p>
+        <p>Más que un programa, es tu nuevo comienzo.</p>
       </div>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    lucide.createIcons(); 
-    
-    AOS.init({
-      once: true,
-      offset: 50,
+    /* ---------- Datos: 12 módulos ---------- */
+    const MODULOS = [
+      ["Inicia tu carrera como Asesora Inmobiliaria", "Conoce cómo funciona el sector y cuál será tu papel dentro de una operación."],
+      ["Captación Estratégica de Inmuebles", "Aprende cómo comenzar a construir inventario y relacionarte profesionalmente con propietarios."],
+      ["Opinión de Mercado y Valuación Básica", "Aprende a analizar propiedades, zonas y referencias de mercado."],
+      ["Prospección, Perfilamiento y Gestión de Clientes", "Descubre cómo encontrar oportunidades y determinar qué necesita realmente cada cliente."],
+      ["Venta Consultiva, Objeciones, Negociación y Cierre", "Desarrolla habilidades comerciales para acompañar conversaciones y operaciones."],
+      ["Comercialización y Marketing Inmobiliario", "Aprende cómo presentar y promocionar una propiedad estratégicamente."],
+      ["Marca Personal y Redes Sociales para Asesoras", "Construye presencia, confianza y autoridad profesional."],
+      ["Aspectos Legales en la Comercialización Inmobiliaria", "Conoce los elementos jurídicos fundamentales que una asesora debe identificar."],
+      ["Proceso Notarial y Trámites de Compraventa", "Comprende qué sucede desde una negociación hasta la formalización de una operación."],
+      ["Créditos Hipotecarios: INFONAVIT y FOVISSSTE", "Conoce alternativas de financiamiento y cómo intervienen en una compraventa."],
+      ["Fiscal, PLD y Cumplimiento Inmobiliario", "Conoce obligaciones y precauciones fundamentales que rodean una operación profesional."],
+      ["Operación Profesional y Plan de Negocio Inmobiliario", "Convierte lo aprendido en una ruta de acción para desarrollar tu actividad."]
+    ];
+    const accM = document.getElementById('modulos-acc');
+    MODULOS.forEach((m, i) => {
+      const n = String(i + 1).padStart(2, '0');
+      accM.insertAdjacentHTML('beforeend', `
+        <details class="acc group">
+          <summary class="flex items-center gap-4 py-5">
+            <span class="w-10 h-10 rounded-lg bg-brand-pinksoft text-brand-purple font-black flex items-center justify-center shrink-0">${n}</span>
+            <span class="flex-1 font-semibold text-brand-purple text-sm md:text-base">${m[0]}</span>
+            <i data-lucide="chevron-down" class="acc-chevron w-5 h-5 text-brand-pink shrink-0"></i>
+          </summary>
+          <p class="pb-5 pl-14 pr-4 text-sm text-slate-600 leading-relaxed">${m[1]}</p>
+        </details>`);
     });
 
+    /* ---------- Datos: FAQ ---------- */
+    const FAQ = [
+      ["¿Necesito experiencia inmobiliaria?", "No. MÍA está diseñado para mujeres que desean comenzar y necesitan una ruta estructurada para hacerlo."],
+      ["¿Las clases son presenciales?", "No. Los módulos principales serán online y en vivo, permitiéndote participar desde donde estés."],
+      ["¿Qué pasa si nunca he vendido?", "Aprenderás fundamentos de prospección, venta consultiva, perfilamiento, negociación, seguimiento y cierre. No necesitas llegar siendo vendedora; sí estar dispuesta a desarrollar habilidades comerciales."],
+      ["¿Voy a tener propiedades para vender?", "Dentro del ecosistema conocerás desarrolladores, inventario y oportunidades de comercialización, sujetas a las condiciones correspondientes de cada producto y aliado."],
+      ["¿Puedo combinarlo con mi trabajo actual?", "El formato está pensado para facilitar que puedas capacitarte mientras mantienes otras responsabilidades. El desarrollo posterior de tu actividad dependerá del tiempo que decidas dedicarle."],
+      ["¿Voy a generar ingresos inmediatamente?", "No podemos garantizar cuándo llegará una operación ni cuánto ganarás. Los resultados dependen, entre otros factores, de tu actividad comercial, prospección, mercado, seguimiento y ejecución. MÍA busca darte herramientas, acompañamiento y acceso a un ecosistema que reduzca la incertidumbre de comenzar."],
+      ["¿La inversión incluye la certificación?", "Sí. Para la Primera Generación MÍA, la inversión de $5,950 MXN incluye la ruta de diagnóstico, alineación y evaluación para la certificación SEP-CONOCER correspondiente. La obtención del certificado está sujeta a cumplir los requisitos aplicables y resultar competente en la evaluación."],
+      ["¿Qué significan las actualizaciones de por vida?", "Tendrás acceso a actualizaciones del contenido cuando exista un cambio legal o normativo que impacte la actividad inmobiliaria y a los nuevos módulos que Academia Mujer es Evolución incorpore posteriormente al programa MÍA."]
+    ];
+    const accF = document.getElementById('faq-acc');
+    FAQ.forEach(f => {
+      accF.insertAdjacentHTML('beforeend', `
+        <details class="acc">
+          <summary class="flex items-center gap-4 py-5">
+            <span class="flex-1 font-semibold text-brand-purple text-sm md:text-base">${f[0]}</span>
+            <i data-lucide="chevron-down" class="acc-chevron w-5 h-5 text-brand-pink shrink-0"></i>
+          </summary>
+          <p class="pb-5 pr-8 text-sm text-slate-600 leading-relaxed">${f[1]}</p>
+        </details>`);
+    });
+
+    /* ---------- Datos: Ruta de Éxito ---------- */
+    const RUTA = [
+      ["Descubre", "lightbulb", "Conoce una nueva posibilidad profesional."],
+      ["Aprende", "book-open", "12 módulos de formación."],
+      ["Practica", "cog", "Ejercicios, casos y Masterclasses."],
+      ["Conecta", "users", "Especialistas, desarrolladores y comunidad."],
+      ["Acciona", "home", "Prospecta, conoce inventario y genera oportunidades."],
+      ["Profesionalízate", "badge-check", "Diagnóstico, alineación y evaluación de competencias."],
+      ["Crece", "trending-up", "Desarrolla experiencia, relaciones y una carrera inmobiliaria."]
+    ];
+    const rs = document.getElementById('ruta-steps');
+    const rsm = document.getElementById('ruta-steps-m');
+    RUTA.forEach((s, i) => {
+      const n = String(i + 1).padStart(2, '0');
+      rs.insertAdjacentHTML('beforeend', `
+        <div class="relative text-center px-1" data-reveal>
+          <div class="w-16 h-16 mx-auto rounded-full bg-white border-2 border-brand-pink/40 shadow-lg flex items-center justify-center mb-3 relative z-10">
+            <i data-lucide="${s[1]}" class="w-7 h-7 text-brand-purple"></i>
+            <span class="absolute -top-2 -right-1 w-6 h-6 rounded-full bg-brand-purple text-white text-[10px] font-black flex items-center justify-center">${n}</span>
+          </div>
+          <h3 class="font-black text-brand-purple text-sm uppercase tracking-wide">${s[0]}</h3>
+          <p class="text-[11px] text-slate-500 mt-1 leading-snug">${s[2]}</p>
+        </div>`);
+      rsm.insertAdjacentHTML('beforeend', `
+        <div class="relative" data-reveal>
+          <div class="absolute -left-[1.30rem] top-0 w-9 h-9 rounded-full bg-white border-2 border-brand-pink/50 shadow flex items-center justify-center">
+            <i data-lucide="${s[1]}" class="w-4 h-4 text-brand-purple"></i>
+          </div>
+          <div class="pl-4">
+            <h3 class="font-black text-brand-purple text-sm uppercase tracking-wide">${n} · ${s[0]}</h3>
+            <p class="text-xs text-slate-500 mt-0.5">${s[2]}</p>
+          </div>
+        </div>`);
+    });
+
+    /* ---------- Año footer + banner de éxito ---------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (new URLSearchParams(location.search).get('pago') === 'exitoso') {
+      const b = document.getElementById('successBanner');
+      if (b) { b.classList.remove('hidden'); b.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    }
+
+    /* ---------- Iconos ---------- */
+    lucide.createIcons();
+
+    /* ---------- Reveal al hacer scroll (ligero, con failsafe total) ---------- */
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var nodes = document.querySelectorAll('[data-reveal]');
+      if (reduce || !('IntersectionObserver' in window)) { return; } // el contenido ya es visible por CSS
+      document.documentElement.classList.add('js-reveal');
+      try {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        var vh = window.innerHeight;
+        nodes.forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < vh && r.bottom > 0) { el.classList.add('in'); }  // ya visible: sin parpadeo
+          else { io.observe(el); }
+        });
+      } catch (e) {}
+      // Failsafe: pase lo que pase, a los 2 s todo queda visible
+      setTimeout(function () {
+        document.querySelectorAll('[data-reveal]:not(.in)').forEach(function (el) { el.classList.add('in'); });
+      }, 2000);
+    })();
+
+    /* ---------- intl-tel-input ---------- */
     const phoneInputField = document.querySelector("#telefono");
     const phoneInput = window.intlTelInput(phoneInputField, {
       preferredCountries: ["mx", "us", "co", "ar", "es"],
@@ -338,45 +979,44 @@
       utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
 
+    /* ================= PASARELA DE PAGO (Apps Script + Stripe) ================= */
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcEiQbdir6k2FoGs_EZqxVMMCb_Zmt5N3xDZBviXRrescm7cIInrCoGzIj8YiE-9lQOg/exec";
 
     async function procesarInscripcion(event) {
       event.preventDefault();
-
       const btn = document.getElementById("btnPagar");
       const nombre = document.getElementById("nombre").value.trim();
       const email = document.getElementById("email").value.trim();
       const ciudad = document.getElementById("ciudad").value.trim();
-      const telefonoInternacional = phoneInput.getNumber(); 
+      const telefonoInternacional = phoneInput.getNumber();
 
+      if (!nombre || !email || !ciudad) {
+        alert("Por favor completa todos los campos obligatorios.");
+        return;
+      }
       if (!phoneInput.isValidNumber()) {
         alert("El número de teléfono no parece ser válido. Revisa el código de país.");
         return;
       }
 
       btn.disabled = true;
-      btn.classList.remove('hover:-translate-y-1');
+      btn.classList.add('opacity-80', 'cursor-wait');
       btn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> <span>Procesando pago seguro...</span>`;
       lucide.createIcons();
 
       const datosOrden = {
         nombre: nombre,
         email: email,
-        telefono: telefonoInternacional, 
+        telefono: telefonoInternacional,
         ciudad: ciudad,
         titulo: "Certificación EC0110.02 - Precio Fundador",
-        precio: 5950.00, // ACTUALIZADO A 5950
-        urlRetorno: window.location.href
+        precio: 5950.00,
+        urlRetorno: window.location.origin + window.location.pathname
       };
 
       try {
-        const res = await fetch(APPS_SCRIPT_URL, {
-          method: "POST",
-          body: JSON.stringify(datosOrden)
-        });
-
+        const res = await fetch(APPS_SCRIPT_URL, { method: "POST", body: JSON.stringify(datosOrden) });
         const data = await res.json();
-
         if (data.status === "ok" && data.init_point) {
           window.location.href = data.init_point;
         } else {
@@ -392,7 +1032,7 @@
 
     function resetBoton(btn) {
       btn.disabled = false;
-      btn.classList.add('hover:-translate-y-1');
+      btn.classList.remove('opacity-80', 'cursor-wait');
       btn.innerHTML = `<i data-lucide="credit-card" class="w-5 h-5"></i> <span>Pagar de forma segura</span>`;
       lucide.createIcons();
     }
