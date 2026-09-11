@@ -708,10 +708,13 @@
 
   <!-- ================= INSCRIPCIÓN / FORM ================= -->
   <section id="inscripcion" class="py-16 md:py-24 bg-brand-pinksoft2">
-    <div id="successBanner" class="hidden max-w-md mx-auto mb-6 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl p-5 text-center">
-      <i data-lucide="check-circle" class="w-8 h-8 mx-auto mb-2"></i>
-      <p class="font-bold">¡Pago recibido! Gracias por unirte a la Primera Generación MÍA.</p>
-      <p class="text-sm mt-1">Te contactaremos por correo y WhatsApp con los siguientes pasos.</p>
+    <div id="successBanner" class="hidden max-w-md mx-auto mb-6 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl p-6 text-center">
+      <i data-lucide="party-popper" class="w-10 h-10 mx-auto mb-2 text-emerald-600"></i>
+      <p class="text-lg font-black">¡Pago confirmado!</p>
+      <p class="text-sm mt-2 leading-relaxed">Te enviamos un <strong>correo con el enlace al grupo privado de WhatsApp</strong> y todas las instrucciones. Revisa tu bandeja de entrada (y la carpeta de spam / promociones).</p>
+      <a href="https://wa.me/524423233949?text=Hola,%20acabo%20de%20pagar%20mi%20inscripci%C3%B3n%20a%20M%C3%ADa%20y%20no%20me%20lleg%C3%B3%20el%20correo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold px-5 py-2.5 rounded-full text-sm transition-colors">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> ¿No te llegó? Escríbenos
+      </a>
     </div>
 
     <div class="max-w-md mx-auto card p-8 md:p-10" data-reveal>
@@ -1005,7 +1008,7 @@
     });
 
     /* ================= PASARELA DE PAGO (Apps Script + Stripe) ================= */
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwcEiQbdir6k2FoGs_EZqxVMMCb_Zmt5N3xDZBviXRrescm7cIInrCoGzIj8YiE-9lQOg/exec";
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxrWXoWu6PM_wuX7585xX_b-c05VaRwR5zWHpvfzmn2H7Gkyh4ss5b2uVuqLKw-86x2uQ/exec";
 
     async function procesarInscripcion(event) {
       event.preventDefault();
